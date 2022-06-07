@@ -1,0 +1,295 @@
+NAME:PRIYA HEMANT TALELE
+ROLL NO:220340325035
+
+
+
+
+1.1.1. - use a command to show the current working directory1
+root@LAPTOP-T01S5IKT:/home# pwd
+/home
+ 
+ 1.2.- list the directory contents in the short and long format
+(with file permissions,owner,size etc,.).Explore attributes given in long format e.g. file type, file permissions, file size, file owner etc
+root@LAPTOP-T01S5IKT:/home# ls -l
+total 0
+-rw-r--r-- 1 root    root       0 Mar 10 21:26 abc.txt
+drwxr-xr-x 1 cdac_kh cdac_kh 4096 Mar 10 14:47 cdac_kh
+drwxr-xr-x 1 root    root    4096 Mar  9 15:53 folder3
+drwxr-xr-x 1 root    root    4096 Mar  9 15:22 folder4
+drwxr-xr-x 1 root    root    4096 Mar  9 15:53 folder5
+drwxr-xr-x 1 root    root    4096 Mar  9 15:53 foler1
+  
+ 1.3.- list all files along with hidden files in current working directory
+root@LAPTOP-T01S5IKT:/home# ls -a
+.  ..  abc.txt  cdac_kh  folder3  folder4  folder5  foler1
+
+1.4.- list only hidden files in the directory
+(Hint : use pwd, ls, echo commands)
+root@LAPTOP-T01S5IKT:/home# ls -ad .*
+.  ..
+
+2.1.Make a directory and name it as cdac-dir and change the current working directory to the new directory.(Hint : use mkdir,cd commands). 
+
+root@LAPTOP-T01S5IKT:/home# mkdir cdac-dir
+root@LAPTOP-T01S5IKT:/home# ls
+abc.txt  cdac-dir  cdac_kh  folder3  folder4  folder5  foler1
+root@LAPTOP-T01S5IKT:/home# cd cdac-dir
+root@LAPTOP-T01S5IKT:/home/cdac-dir# pwd
+/home/cdac-dir
+root@LAPTOP-T01S5IKT:/home/cdac-dir#
+
+3.1.Create following nested directories inside current directory by invoking single command for only one time.
+Note : here root_dir is current directory. 
+
+root@LAPTOP-T01S5IKT:/# ls
+1        bin   cdac-dir   dev        heyy.txt  lib32   mnt          opt        run     snap      thursday.txt
+2        boot  cdac1      etc        home      lib64   monday.txt   priya.txt  s2.txt  srv       tmp
+3        c1    cddac      f1.txt     init      libx32  newfile      proc       s4.txt  sys       usr
+abc.txt  cdac  cddac.txt  hello.txt  lib       media   newlife.txt  root       sbin    temp.txt  var
+root@LAPTOP-T01S5IKT:/# cd cdac-dir
+root@LAPTOP-T01S5IKT:/cdac-dir# ls
+root@LAPTOP-T01S5IKT:/cdac-dir# mkdir -p a1/b1
+root@LAPTOP-T01S5IKT:/cdac-dir# mkdir -p a1/b2
+root@LAPTOP-T01S5IKT:/cdac-dir# mkdir -p a2/b1
+root@LAPTOP-T01S5IKT:/cdac-dir# mkdir -p a2/b2
+root@LAPTOP-T01S5IKT:/cdac-dir# tree
+.
+├── a1
+│   ├── b1
+│   └── b2
+└── a2
+    ├── b1
+    └── b2
+root@LAPTOP-T01S5IKT:/# mkdir cdac-dir
+root@LAPTOP-T01S5IKT:/# cd cdac-dir
+root@LAPTOP-T01S5IKT:/cdac-dir# mkdir -p a1/b1/c1
+root@LAPTOP-T01S5IKT:/cdac-dir# mkdir -p a2/b2/c2
+root@LAPTOP-T01S5IKT:/cdac-dir# tree
+.
+├── a1
+│   └── b1
+│       └── c1
+└── a2
+    └── b2
+        └── c2
+
+4.  List the directories(folders), then remove the cdac-dir directory and list thefolders again to show that it is no longer present.(Hint : use rm, ls command).
+
+root@LAPTOP-T01S5IKT:/# ls
+1  abc.txt  c1        cdac1      dev     hello.txt  init   lib64   mnt         newlife.txt  proc  s2.txt  snap  temp.txt      usr
+2  bin      cdac      cddac      etc     heyy.txt   lib    libx32  monday.txt  opt          root  s4.txt  srv   thursday.txt  var
+3  boot     cdac-dir  cddac.txt  f1.txt  home       lib32  media   newfile     priya.txt    run   sbin    sys   tmp
+root@LAPTOP-T01S5IKT:/# rmdir cdac-dir
+rmdir: failed to remove 'cdac-dir': Directory not empty
+root@LAPTOP-T01S5IKT:/# rm -rf cdac-dir
+root@LAPTOP-T01S5IKT:/# ls
+1  abc.txt  c1     cddac      etc        heyy.txt  lib    libx32  monday.txt   opt        root    s4.txt  srv       thursday.txt  var
+2  bin      cdac   cddac.txt  f1.txt     home      lib32  media   newfile      priya.txt  run     sbin    sys       tmp
+3  boot     cdac1  dev        hello.txt  init      lib64  mnt     newlife.txt  proc       s2.txt  snap    temp.txt  usr
+root@LAPTOP-T01S5IKT:/#
+
+2.1.Display the man-page for ls, but redirect the output into temp.txt, then use the cat, less, and more commands to display the new file
+
+root@LAPTOP-T01S5IKT:/home# man ls >>temp.txt
+root@LAPTOP-T01S5IKT:/home# cat temp.txt
+root@LAPTOP-T01S5IKT:/home# cat less.txt
+root@LAPTOP-T01S5IKT:/home# cat more.txt
+
+2.2 Display the initial 10 lines and final 5 lines of temp.txt with the obvious Linux
+commands.(Hint: use head and tail commands)
+cdac_kh@LAPTOP-T01S5IKT:/home$ head -n 10 temp.txt
+LS(1)                                                      User Commands                                                      LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List  information  about the FILEs (the current directory by default).  Sort entries alphabetically if none of -cftuvSUX nor
+cdac_kh@LAPTOP-T01S5IKT:/home$ tail -n 10 temp.txt
+COPYRIGHT
+       Copyright  ©  2018  Free  Software  Foundation,  Inc.   License  GPLv3+:  GNU  GPL  version  3 or later <https://gnu.org/li‐
+       censes/gpl.html>.
+       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
+
+SEE ALSO
+       Full documentation at: <https://www.gnu.org/software/coreutils/ls>
+       or available locally via: info '(coreutils) ls invocation'
+
+GNU coreutils 8.30                                         September 2019                                                     LS(1)
+
+2.3 Copy temp.txt to another directory and rename it there.
+(Hint: use cp to copy and mv command to rename)
+root@LAPTOP-T01S5IKT:/home# ls
+abc.txt  cdac-dir  cdac_kh  folder3  folder4  folder5  foler1  temp.txt
+root@LAPTOP-T01S5IKT:/home# cd folder4
+root@LAPTOP-T01S5IKT:/home/folder4# ls
+temp.txt
+root@LAPTOP-T01S5IKT:/home/folder4# mv temp.txt new.txt
+root@LAPTOP-T01S5IKT:/home/folder4# ls
+new.txt
+
+2.4.Display the number of lines, words and characters in file using Linux
+command (Hint: use wc command).
+root@LAPTOP-T01S5IKT:/home/folder4# wc new.txt
+0 0 0 new.txt
+root@LAPTOP-T01S5IKT:/home/folder4# wc -m new.txt
+0 new.txt
+root@LAPTOP-T01S5IKT:/home/folder4# wc -w new.txt
+0 new.txt
+root@LAPTOP-T01S5IKT:/home/folder4# wc -l new.txt
+0 new.txt
+
+2.5 Use history command to display last 10 commands used.
+(Hint: use history command)
+root@LAPTOP-T01S5IKT:/home# history | tail -n 10
+  340  ls
+  341  mv temp.txt new.txt
+  342  ls
+  343  wc new.txt
+  344  wc -m new.txt
+  345  wc -w new.txt
+  346  wc -l new.txt
+  347  cd ..
+  348  history -10
+  349  history | tail -n 10
+
+3.1.Create tar archive file of any directory present in your home directory.
+(Hint: use tar command)
+- list the contents of the archive file without extracting.
+root@LAPTOP-T01S5IKT:/home/folder3# ls
+file.txt  file2.txt
+root@LAPTOP-T01S5IKT:/home/folder3# tar cf file.tar file.txt
+root@LAPTOP-T01S5IKT:/home/folder3# ls
+file.tar  file.txt  file2.txt
+root@LAPTOP-T01S5IKT:/home/folder3# tar tf file.tar
+file.txt
+
+3.2.Create zip file of another directory. (Hint: use zip command) -
+list throot@LAPTOP-T01S5IKT:/home/folder4# ls
+c.txt  neww.txt  p.txt
+root@LAPTOP-T01S5IKT:/home/folder4# gzip p.txt
+root@LAPTOP-T01S5IKT:/home/folder4# ls
+c.txt  neww.txt  p.txt.gz
+root@LAPTOP-T01S5IKT:/home/folder4# zcat p.txt
+root@LAPTOP-T01S5IKT:/home/folder4#
+
+3.3
+Give read, write & execute permissions to your file. (Hint: use chmod
+command)
+
+root@LAPTOP-T01S5IKT:/home/folder4# ls
+c.txt  neww.txt  p.txt.gz
+root@LAPTOP-T01S5IKT:/home/folder4# ls -l
+total 0
+-rw-r--r-- 1 root root  0 Mar 10 22:28 c.txt
+-rw-r--r-- 1 root root  0 Mar 10 22:28 neww.txt
+-rw-r--r-- 1 root root 26 Mar 10 22:28 p.txt.gz
+root@LAPTOP-T01S5IKT:/home/folder4# chmod 777 c.txt
+root@LAPTOP-T01S5IKT:/home/folder4# ls -l
+total 0
+-rwxrwxrwx 1 root root  0 Mar 10 22:28 c.txt
+-rw-r--r-- 1 root root  0 Mar 10 22:28 neww.txt
+-rw-r--r-- 1 root root 26 Mar 10 22:28 p.txt.gz
+
+3.4.Change ownership of that file.(Hint: use chown command)
+root@LAPTOP-T01S5IKT:/home/folder4# ls -l
+total 0
+-rwxrwxrwx 1 root root  0 Mar 10 22:28 c.txt
+-rw-r--r-- 1 root root  0 Mar 10 22:28 neww.txt
+-rw-r--r-- 1 root root 26 Mar 10 22:28 p.txt.gz
+root@LAPTOP-T01S5IKT:/home/folder4# chown cdac_kh c.txt
+root@LAPTOP-T01S5IKT:/home/folder4# ls
+c.txt  neww.txt  p.txt.gz
+root@LAPTOP-T01S5IKT:/home/folder4# ls -l
+total 0
+-rwxrwxrwx 1 cdac_kh root  0 Mar 10 22:28 c.txt
+-rw-r--r-- 1 root    root  0 Mar 10 22:28 neww.txt
+-rw-r--r-- 1 root    root 26 Mar 10 22:28 p.txt.gz
+
+3.5.List processes running in shell, all running processes(Hint: use man page of
+ps command) and show top processes in decreasing order of their resource
+utilization.(Hint: use top command).
+root@LAPTOP-T01S5IKT:/home/folder4# ps
+  PID TTY          TIME CMD
+    9 tty1     00:00:00 init
+  159 tty1     00:00:00 sudo
+  160 tty1     00:00:00 su
+  161 tty1     00:00:00 bash
+  270 tty1     00:00:00 ps
+root@LAPTOP-T01S5IKT:/home/folder4# top
+top - 22:42:56 up  1:22,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:   7 total,   1 running,   6 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7549.3 total,   4833.0 free,   2492.3 used,    224.0 buff/cache
+MiB Swap:  23552.0 total,  23552.0 free,      0.0 used.   4926.4 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    1 root      20   0    8940    328    284 S   0.0   0.0   0:00.15 init
+    9 root      20   0    8940    224    180 S   0.0   0.0   0:00.00 init
+   10 cdac_kh   20   0   18080   3572   3476 S   0.0   0.0   0:00.31 bash
+  159 root      20   0   18928   2872   2776 S   0.0   0.0   0:00.06 sudo
+  160 root      20   0   18032   2032   2008 S   0.0   0.0   0:00.03 su
+  161 root      20   0   17008   2468   2372 S   0.0   0.0   0:00.61 bash
+  271 root      20   0   18932   2152   1524 R   0.0   0.0   0:00.04 top
+
+
+
+4.1.Display current time and calendar (Hint: use date, cal commands)
+root@LAPTOP-T01S5IKT:/home/folder4# date
+Thu Mar 10 22:44:10 IST 2022
+root@LAPTOP-T01S5IKT:/home/folder4# cal
+     March 2022
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+
+4.2. Change the current date and time of the system to following 14th
+March 2017, 10:10 AM
+root@LAPTOP-T01S5IKT:/# date -s "14 march 2017 10:10:00"
+Tue Mar 14 10:10:00 IST 2017
+root@LAPTOP-T01S5IKT:/# date
+Thu Mar 14 10:10:00 IST 2017
+
+4.3Explore following commands
+who, whoami, whatis, whereis, (Hint: use man pages)
+
+root@LAPTOP-T01S5IKT:/# cd home
+root@LAPTOP-T01S5IKT:/home# whoami
+root
+root@LAPTOP-T01S5IKT:/home# whatis locate
+locate (1)           - find files by name
+root@LAPTOP-T01S5IKT:/home# whereis file.txt
+file: /usr/bin/file /usr/lib/file /usr/share/file /usr/share/man/man1/file.1.gz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
